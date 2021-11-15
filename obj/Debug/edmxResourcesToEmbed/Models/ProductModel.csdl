@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="fullName" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="empCode" Type="Int32" Nullable="false" />
+    <Property Name="salary" Type="Int32" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <FunctionImport Name="CountRows" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="SelectAllEmployees" ReturnType="Collection(ProductDBModel.SelectAllEmployees_Result)" />
+    <FunctionImport Name="SelectEmployeeIndividual" ReturnType="Collection(ProductDBModel.SelectEmployeeIndividual_Result)">
+      <Parameter Name="city" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SelectAllEmployees_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="fullName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="empCode" Nullable="false" />
+    <Property Type="Int32" Name="salary" Nullable="false" />
+    <Property Type="String" Name="city" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SelectEmployeeIndividual_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="fullName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="empCode" Nullable="false" />
+    <Property Type="Int32" Name="salary" Nullable="false" />
+    <Property Type="String" Name="city" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

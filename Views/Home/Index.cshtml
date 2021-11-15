@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>
+       FORM
+   </title>
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+</head>
+<body style="background-color:powderblue;">
+    <table> 
+        <tr style="border:2px solid black; margin:0 auto; padding:20px;">
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();">
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>EMP Code</label>
+                        <input type="text" name="empCode" id="empCode">
+                    </div>
+                    <div>
+                        <label>Salary</label>
+                        <input type="text" name="salary" id="salary">
+                    </div>
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="table.list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>FullName</th>
+                            <th>EmpCode</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="~/Content/Scripts.js"></script>
+</body>
+</html>

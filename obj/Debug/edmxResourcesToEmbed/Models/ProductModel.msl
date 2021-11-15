@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProductDBModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="ProductDBModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="empCode" ColumnName="empCode" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="city" ColumnName="city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CountRows" FunctionName="ProductDBModel.Store.CountRows" />
+    <FunctionImportMapping FunctionImportName="SelectAllEmployees" FunctionName="ProductDBModel.Store.SelectAllEmployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProductDBModel.SelectAllEmployees_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="empCode" ColumnName="empCode" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="city" ColumnName="city" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectEmployeeIndividual" FunctionName="ProductDBModel.Store.SelectEmployeeIndividual">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProductDBModel.SelectEmployeeIndividual_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="empCode" ColumnName="empCode" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="city" ColumnName="city" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
